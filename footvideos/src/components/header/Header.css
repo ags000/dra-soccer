@@ -1,0 +1,19 @@
+
+#root {
+  overflow: hidden;
+}
+nav{
+  padding-top: 7px;
+  padding-right: 7px;
+  display: flex;
+  justify-content: end;
+  gap: 7px;
+}
+.header-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header-link:hover {
+  color: #000;
+}

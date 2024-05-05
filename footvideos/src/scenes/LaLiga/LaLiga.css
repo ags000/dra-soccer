@@ -1,0 +1,38 @@
+
+.table__container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+th, td {
+  text-align: center; /* Centra el contenido horizontalmente */
+}
+
+.table__container-cont {
+  background-color: #fff;
+}
+
+.table__container-cont{
+  padding: 1em;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+
+}
+
+.champions {
+  background-color: #41DDFF;
+}
+
+.europaleague{
+  background-color: #F7D920;
+}
+
+.conference{
+  background-color: #85B357;
+}
+
+.relegation{
+  background-color: #F51B28;
+}
