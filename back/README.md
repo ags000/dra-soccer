@@ -1,2 +1,1 @@
-### ENV VARS
-
+Completar un archivo .env como se sigue en .env.dev

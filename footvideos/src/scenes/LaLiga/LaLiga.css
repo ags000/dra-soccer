@@ -22,17 +22,17 @@ th, td {
 }
 
 .champions {
-  background-color: #41DDFF;
+  border-left: 5px solid #41DDFF;
 }
 
 .europaleague{
-  background-color: #F7D920;
+  border-left: 5px solid #F7D920;
 }
 
 .conference{
-  background-color: #85B357;
+  border-left: 5px solid #85B357;
 }
 
 .relegation{
-  background-color: #F51B28;
+  border-left: 5px solid #F51B28;
 }

@@ -19,7 +19,7 @@ const LaLiga = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/laliga`)
+    axios.get(`${import.meta.env.VITE_BASE_PATH}/api/laliga`)
     .then((resp) => {
       setTable(resp.data);
     })
@@ -67,21 +67,21 @@ const LaLiga = () => {
               {table.map((elementRow, index) => {
                 if(index > 19) return null;
                 return (
-                  <tr key={'team'+index} className={calculateClassName(index)}>
-                  {elementRow.map((element, index) => {
+                  <tr key={'team'+index} >
+                  {elementRow.map((element, indexsec) => {
                     
 
-                    if (index === 0) {
+                    if (indexsec === 0) {
                       return (
-                        <td key={`td-img-${index}`}>
-                          <img key={`img-${index}`} src={element} alt="" />
+                        <td key={`td-img-${indexsec}`} className={calculateClassName(index)}>
+                          <img key={`img-${indexsec}`} src={element} alt="" />
                         </td>
                         
                       )
                     }
       
                     return (
-                      <td key={`td-${index}`}>{element}</td>
+                      <td key={`td-${indexsec}`}>{element}</td>
                     )
                   })}
                   </tr>

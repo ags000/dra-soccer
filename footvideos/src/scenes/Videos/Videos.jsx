@@ -17,7 +17,7 @@ const Videos = () => {
   const [actualVideo, setActualVideo] = useState(0);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/feed`)
+    axios.get(`${import.meta.env.VITE_BASE_PATH}/api/feed`)
     .then((resp) => {
       console.log(resp.data)
       setVideoList(resp.data.response);

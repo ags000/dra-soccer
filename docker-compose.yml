@@ -1,0 +1,48 @@
+# Borrar los tres contenedores y ejecutar el compose.
+# Tras 1 min ejecutar el de api, ya que no está correctamente esperando.
+version: "3.9"
+# cambiar build a docker_image
+services:
+  web:
+    build: ./footvideos
+    container_name: rewindf-front
+    ports:
+      - "80:80"
+    networks:
+      - rewindf-network
+    depends_on:
+      database:
+        condition: service_healthy
+
+  api:
+    build: ./back
+    container_name: rewindf-back
+    working_dir: /app
+    networks:
+      - rewindf-network
+    depends_on:
+      - web
+    
+
+  database:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: mypass
+      MARIADB_DATABASE: videofut
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    networks:
+      - rewindf-network
+
+
+
+
+
+networks:
+  rewindf-network:
+    driver: bridge
+
